@@ -1,0 +1,23 @@
+# Upgrading HR Employee Portal to Enterprise SaaS HR Platform
+
+- [x] Core Styling System & Theme Configuration
+  - [x] Modify `enhanced-theme.css` variables with the brand design tokens (Hex values, 8px grid, Inter typography, 18px rounded cards)
+- [x] Collapsible Navigation Sidebar
+  - [x] Upgrade `Sidebar.js` to use Lucide React icons, Section Headers, User Profile card with Online indicator
+  - [x] Implement Hamburger expand/collapse states (280px / 75px)
+  - [x] Add Logout, Settings, and Notification center links
+  - [x] Refine `Sidebar.css` with active glows, transitions, and mobile drawer overlays
+- [x] Floating Sticky Navbar (Header)
+  - [x] Upgrade `Header.js` to include search, notifications, message hub, language preference, clock, and user dropdown panel
+  - [x] Refine `Header.css` with 72px heights, blur filters, and shadows
+- [x] Layout Adaptations
+  - [x] Update `AppLayout.js` and `AppLayout.css` to link sidebar toggle state with body viewport offsets
+- [x] Role-Based Dashboard Refinements
+  - [x] HR Dashboard updates (Welcome Banner, stat cards, charts integration)
+  - [x] Manager Dashboard updates
+  - [x] Employee Dashboard updates
+- [x] Components, Forms, and Grid Polish
+  - [x] Format inputs, date-pickers, upload blocks, and buttons
+  - [x] Standardize Table DataGrids (sorting, searching, columns, actions)
+- [x] Quality Check & Build Validation
+  - [x] Build checking & local routing verification

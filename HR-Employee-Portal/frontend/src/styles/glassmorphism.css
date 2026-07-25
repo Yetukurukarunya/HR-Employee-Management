@@ -1,0 +1,455 @@
+/* ==========================================================================
+   GLASSMORPHISM & CLASSY THEME SYSTEM
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Shared Glass Specs */
+  --glass-blur: blur(16px);
+  --glass-blur-sm: blur(8px);
+  --glass-blur-lg: blur(24px);
+  --glass-radius: 16px;
+  --glass-radius-sm: 10px;
+  --glass-radius-lg: 24px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ==========================================================================
+   THEME PRESETS
+   ========================================================================== */
+
+/* --- 1. CRYSTAL GLASS (Default Light Pro) --- */
+:root,
+[data-theme="crystal"],
+[data-theme="light"] {
+  --theme-name: 'Crystal Glass';
+  --bg-main: linear-gradient(135deg, #f0f4fd 0%, #e5ecfb 40%, #eef2ff 100%);
+  --bg-canvas: #f4f7fc;
+  
+  /* Glass Surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-bg-hover: rgba(255, 255, 255, 0.85);
+  --glass-bg-solid: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-border-light: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07), 0 2px 6px 0 rgba(0, 0, 0, 0.02);
+  --glass-shadow-hover: 0 16px 40px 0 rgba(79, 70, 229, 0.14), 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+  
+  /* Primary Colors */
+  --primary: #4f46e5;
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --primary-glow: rgba(99, 102, 241, 0.35);
+  --primary-light: rgba(79, 70, 229, 0.08);
+  --primary-text: #ffffff;
+  
+  /* Typography */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  
+  /* Accents */
+  --success: #10b981;
+  --success-glow: rgba(16, 185, 129, 0.3);
+  --warning: #f59e0b;
+  --warning-glow: rgba(245, 158, 11, 0.3);
+  --danger: #ef4444;
+  --danger-glow: rgba(239, 68, 68, 0.3);
+  --info: #06b6d4;
+  --info-glow: rgba(6, 182, 212, 0.3);
+  --purple: #8b5cf6;
+  --gold: #d97706;
+
+  /* Components */
+  --nav-bg: rgba(255, 255, 255, 0.82);
+  --nav-border: rgba(226, 232, 240, 0.8);
+  --sidebar-bg: rgba(255, 255, 255, 0.78);
+  --input-bg: rgba(255, 255, 255, 0.6);
+  --input-border: rgba(203, 213, 225, 0.8);
+}
+
+/* --- 2. MIDNIGHT CYBER GLASS (Dark Mode Pro) --- */
+[data-theme="midnight"],
+[data-theme="dark"] {
+  --theme-name: 'Midnight Cyber';
+  --bg-main: radial-gradient(circle at 10% 20%, #0d111e 0%, #070913 90%);
+  --bg-canvas: #090c15;
+  
+  /* Glass Surfaces */
+  --glass-bg: rgba(18, 24, 38, 0.65);
+  --glass-bg-hover: rgba(27, 36, 56, 0.75);
+  --glass-bg-solid: rgba(15, 20, 32, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-light: rgba(255, 255, 255, 0.06);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-shadow-hover: 0 16px 40px 0 rgba(99, 102, 241, 0.25);
+  
+  /* Primary Colors */
+  --primary: #818cf8;
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --primary-glow: rgba(129, 140, 248, 0.4);
+  --primary-light: rgba(129, 140, 248, 0.15);
+  --primary-text: #ffffff;
+  
+  /* Typography */
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+  
+  /* Accents */
+  --success: #34d399;
+  --success-glow: rgba(52, 211, 153, 0.35);
+  --warning: #fbbf24;
+  --warning-glow: rgba(251, 191, 36, 0.35);
+  --danger: #f87171;
+  --danger-glow: rgba(248, 113, 113, 0.35);
+  --info: #22d3ee;
+  --info-glow: rgba(34, 211, 238, 0.35);
+  --purple: #a78bfa;
+  --gold: #fbbf24;
+
+  /* Components */
+  --nav-bg: rgba(15, 20, 32, 0.75);
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --sidebar-bg: rgba(13, 17, 28, 0.72);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.15);
+}
+
+/* --- 3. EMERALD ROYALE (Luxury Green & Gold) --- */
+[data-theme="emerald"] {
+  --theme-name: 'Emerald Royale';
+  --bg-main: linear-gradient(135deg, #062419 0%, #03140e 50%, #073022 100%);
+  --bg-canvas: #020f0b;
+  
+  /* Glass Surfaces */
+  --glass-bg: rgba(6, 40, 28, 0.62);
+  --glass-bg-hover: rgba(10, 56, 39, 0.75);
+  --glass-bg-solid: rgba(4, 30, 21, 0.95);
+  --glass-border: rgba(52, 211, 153, 0.25);
+  --glass-border-light: rgba(52, 211, 153, 0.12);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --glass-shadow-hover: 0 16px 40px 0 rgba(16, 185, 129, 0.3);
+  
+  /* Primary Colors */
+  --primary: #10b981;
+  --primary-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --primary-glow: rgba(16, 185, 129, 0.45);
+  --primary-light: rgba(16, 185, 129, 0.15);
+  --primary-text: #ffffff;
+  
+  /* Typography */
+  --text-main: #f0fdf4;
+  --text-muted: #a7f3d0;
+  --text-light: #6ee7b7;
+  
+  /* Accents */
+  --success: #34d399;
+  --success-glow: rgba(52, 211, 153, 0.4);
+  --warning: #f59e0b;
+  --warning-glow: rgba(245, 158, 11, 0.4);
+  --danger: #ef4444;
+  --danger-glow: rgba(239, 68, 68, 0.4);
+  --info: #06b6d4;
+  --info-glow: rgba(6, 182, 212, 0.4);
+  --purple: #8b5cf6;
+  --gold: #fbbf24;
+
+  /* Components */
+  --nav-bg: rgba(4, 30, 21, 0.78);
+  --nav-border: rgba(52, 211, 153, 0.2);
+  --sidebar-bg: rgba(3, 20, 14, 0.75);
+  --input-bg: rgba(16, 185, 129, 0.08);
+  --input-border: rgba(52, 211, 153, 0.25);
+}
+
+/* --- 4. SAPPHIRE HORIZON (Corporate Teal & Ocean Blue) --- */
+[data-theme="sapphire"] {
+  --theme-name: 'Sapphire Horizon';
+  --bg-main: linear-gradient(135deg, #0b192c 0%, #1e3e62 100%);
+  --bg-canvas: #07101e;
+  
+  /* Glass Surfaces */
+  --glass-bg: rgba(15, 32, 56, 0.65);
+  --glass-bg-hover: rgba(24, 48, 80, 0.78);
+  --glass-bg-solid: rgba(11, 25, 44, 0.95);
+  --glass-border: rgba(56, 189, 248, 0.25);
+  --glass-border-light: rgba(56, 189, 248, 0.12);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+  --glass-shadow-hover: 0 16px 40px 0 rgba(14, 165, 233, 0.3);
+  
+  /* Primary Colors */
+  --primary: #0ea5e9;
+  --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  --primary-glow: rgba(14, 165, 233, 0.45);
+  --primary-light: rgba(14, 165, 233, 0.15);
+  --primary-text: #ffffff;
+  
+  /* Typography */
+  --text-main: #f0f9ff;
+  --text-muted: #bae6fd;
+  --text-light: #7dd3fc;
+  
+  /* Accents */
+  --success: #10b981;
+  --success-glow: rgba(16, 185, 129, 0.4);
+  --warning: #f59e0b;
+  --warning-glow: rgba(245, 158, 11, 0.4);
+  --danger: #f43f5e;
+  --danger-glow: rgba(244, 63, 94, 0.4);
+  --info: #38bdf8;
+  --info-glow: rgba(56, 189, 248, 0.4);
+  --purple: #8b5cf6;
+  --gold: #f59e0b;
+
+  /* Components */
+  --nav-bg: rgba(11, 25, 44, 0.8);
+  --nav-border: rgba(56, 189, 248, 0.2);
+  --sidebar-bg: rgba(7, 16, 30, 0.78);
+  --input-bg: rgba(14, 165, 233, 0.08);
+  --input-border: rgba(56, 189, 248, 0.25);
+}
+
+/* --- 5. SUNSET LUXE (Coral, Amber & Violet Glass) --- */
+[data-theme="sunset"] {
+  --theme-name: 'Sunset Luxe';
+  --bg-main: linear-gradient(135deg, #2a0845 0%, #6441a5 50%, #ff6b6b 100%);
+  --bg-canvas: #1a052c;
+  
+  /* Glass Surfaces */
+  --glass-bg: rgba(42, 8, 69, 0.65);
+  --glass-bg-hover: rgba(65, 18, 100, 0.78);
+  --glass-bg-solid: rgba(30, 6, 50, 0.95);
+  --glass-border: rgba(255, 154, 158, 0.3);
+  --glass-border-light: rgba(255, 154, 158, 0.15);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --glass-shadow-hover: 0 16px 40px 0 rgba(255, 107, 107, 0.35);
+  
+  /* Primary Colors */
+  --primary: #ff6b6b;
+  --primary-gradient: linear-gradient(135deg, #ff8e53 0%, #ff6b6b 100%);
+  --primary-glow: rgba(255, 107, 107, 0.45);
+  --primary-light: rgba(255, 107, 107, 0.15);
+  --primary-text: #ffffff;
+  
+  /* Typography */
+  --text-main: #fff5f5;
+  --text-muted: #fecdd3;
+  --text-light: #fda4af;
+  
+  /* Accents */
+  --success: #34d399;
+  --success-glow: rgba(52, 211, 153, 0.4);
+  --warning: #fbbf24;
+  --warning-glow: rgba(251, 191, 36, 0.4);
+  --danger: #ff4757;
+  --danger-glow: rgba(255, 71, 87, 0.4);
+  --info: #70a1ff;
+  --info-glow: rgba(112, 161, 255, 0.4);
+  --purple: #e056fd;
+  --gold: #ffa502;
+
+  /* Components */
+  --nav-bg: rgba(30, 6, 50, 0.82);
+  --nav-border: rgba(255, 154, 158, 0.25);
+  --sidebar-bg: rgba(20, 4, 35, 0.78);
+  --input-bg: rgba(255, 107, 107, 0.08);
+  --input-border: rgba(255, 154, 158, 0.25);
+}
+
+/* ==========================================================================
+   GLASSMORPHISM UTILITIES
+   ========================================================================== */
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--glass-radius);
+  transition: var(--transition-smooth);
+}
+
+.glass-panel:hover {
+  background: var(--glass-bg-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.glass-card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--glass-radius);
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: var(--transition-bounce);
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-border-light), transparent);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glass-shadow-hover);
+  border-color: var(--glass-border);
+}
+
+.glass-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: var(--glass-radius-sm);
+  background: var(--primary-gradient);
+  color: var(--primary-text);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 16px var(--primary-glow);
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  text-decoration: none;
+}
+
+.glass-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px var(--primary-glow);
+  filter: brightness(1.08);
+}
+
+.glass-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.glass-button-secondary {
+  background: var(--glass-bg);
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-button-secondary:hover {
+  background: var(--glass-bg-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.glass-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: var(--input-bg);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid var(--input-border);
+  border-radius: var(--glass-radius-sm);
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.glass-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-light);
+  background: var(--glass-bg-solid);
+}
+
+.glass-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Glass Badge */
+.glass-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-badge-primary {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary-glow);
+}
+
+.glass-badge-success {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--success);
+  border-color: var(--success-glow);
+}
+
+.glass-badge-warning {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--warning);
+  border-color: var(--warning-glow);
+}
+
+.glass-badge-danger {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--danger);
+  border-color: var(--danger-glow);
+}
+
+/* Ambient Background Mesh */
+body {
+  background: var(--bg-main) !important;
+  background-attachment: fixed !important;
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.5s ease;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  background: var(--primary-glow);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -20%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background: var(--success-glow);
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
+}

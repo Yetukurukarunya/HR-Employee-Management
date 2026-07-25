@@ -1,0 +1,53 @@
+/* ==========================================================================
+   APP LAYOUT ARCHITECTURE
+   Coordinating floating sidebar offsets and responsive viewport styling
+   ========================================================================== */
+
+.app-layout-root {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-secondary);
+  width: 100%;
+}
+
+.app-main-viewport {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  /* Sidebar starts at 280px floating (with 1rem left offset + 1rem padding) = 300px (approx 18.75rem) */
+  padding-left: 312px;
+  transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Offsets when Sidebar is Collapsed */
+body.sidebar-collapsed .app-main-viewport {
+  /* Sidebar collapsed is 75px floating (with 1rem left offset + 1rem padding) = 95px (approx 6rem) */
+  padding-left: 107px;
+}
+
+.app-content-body {
+  flex: 1;
+  padding: 6.5rem 2rem 3rem 2rem; /* Padded to clear the 72px floating top navbar */
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 1024px) {
+  .app-main-viewport,
+  body.sidebar-collapsed .app-main-viewport {
+    padding-left: 0 !important; /* Sidebar becomes drawer overlay, main viewport is full width */
+  }
+  
+  .app-content-body {
+    padding: 5.5rem 1rem 5rem 1rem; /* Padding at top to clear mobile hamburger button */
+  }
+}
+
+@media (max-width: 768px) {
+  .app-content-body {
+    padding-bottom: 6rem;
+  }
+}

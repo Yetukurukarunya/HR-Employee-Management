@@ -1,0 +1,41 @@
+.mobile-glass-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.mobile-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.mobile-nav-link.active {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .mobile-glass-bottom-nav {
+    display: flex;
+  }
+  .app-glass-sidebar {
+    display: none;
+  }
+}

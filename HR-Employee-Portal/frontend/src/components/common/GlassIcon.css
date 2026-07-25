@@ -1,0 +1,105 @@
+.glass-icon-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  border-radius: 14px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition-bounce);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.glass-icon-shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 55%
+  );
+  transform: rotate(30deg);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.glass-icon-container:hover .glass-icon-shine {
+  transform: rotate(30deg) translate(30%, 30%);
+}
+
+.glass-icon-container:hover {
+  transform: scale(1.08) translateY(-2px);
+}
+
+/* Glass Icon Variants */
+.glass-icon-primary {
+  background: var(--primary-light);
+  border-color: var(--primary-glow);
+  color: var(--primary);
+}
+.glass-icon-primary.icon-glow {
+  box-shadow: 0 4px 16px var(--primary-glow);
+}
+
+.glass-icon-success {
+  background: rgba(16, 185, 129, 0.14);
+  border-color: var(--success-glow);
+  color: var(--success);
+}
+.glass-icon-success.icon-glow {
+  box-shadow: 0 4px 16px var(--success-glow);
+}
+
+.glass-icon-warning {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: var(--warning-glow);
+  color: var(--warning);
+}
+.glass-icon-warning.icon-glow {
+  box-shadow: 0 4px 16px var(--warning-glow);
+}
+
+.glass-icon-danger {
+  background: rgba(239, 68, 68, 0.14);
+  border-color: var(--danger-glow);
+  color: var(--danger);
+}
+.glass-icon-danger.icon-glow {
+  box-shadow: 0 4px 16px var(--danger-glow);
+}
+
+.glass-icon-info {
+  background: rgba(6, 182, 212, 0.14);
+  border-color: var(--info-glow);
+  color: var(--info);
+}
+.glass-icon-info.icon-glow {
+  box-shadow: 0 4px 16px var(--info-glow);
+}
+
+.glass-icon-purple {
+  background: rgba(139, 92, 246, 0.14);
+  border-color: rgba(139, 92, 246, 0.3);
+  color: var(--purple);
+}
+.glass-icon-purple.icon-glow {
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+}
+
+.glass-icon-gold {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: var(--gold);
+}
+.glass-icon-gold.icon-glow {
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+}

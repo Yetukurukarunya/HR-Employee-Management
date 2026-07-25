@@ -1,0 +1,66 @@
+.attendance-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.digital-clock-display {
+  padding: 0.75rem 1.25rem;
+  border-radius: 14px;
+  text-align: right;
+}
+
+.clock-time-str {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+}
+
+.clock-date-str {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.punch-clock-card {
+  padding: 2rem 2.25rem;
+  border-radius: var(--glass-radius-lg);
+}
+
+.punch-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.punch-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.punch-status-badge h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.punch-status-badge p {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.punch-main-btn {
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+}
+
+.punch-main-btn.btn-out {
+  background: var(--danger-glow) !important;
+  color: var(--danger) !important;
+  border-color: var(--danger);
+}

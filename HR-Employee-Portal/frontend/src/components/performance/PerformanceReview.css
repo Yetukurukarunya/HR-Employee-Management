@@ -1,0 +1,123 @@
+/* ========================================
+   PERFORMANCE REVIEW
+   ======================================== */
+
+.performance-page {
+  padding: 2rem 2.5rem;
+  background: #f4f4f5;
+  min-height: 100vh;
+}
+[data-theme="dark"]     .performance-page { background: #0f0f11; }
+[data-theme="gradient"] .performance-page { background: transparent; }
+
+/* Summary stats */
+.performance-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+.performance-stat-card {
+  background: white; border: 1px solid #e4e4e7; border-radius: 18px;
+  padding: 1.375rem; text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05); transition: all 0.25s ease;
+}
+.performance-stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+[data-theme="dark"]     .performance-stat-card { background: #1e1e23; border-color: #27272a; }
+[data-theme="gradient"] .performance-stat-card { background: rgba(15,10,40,0.55); border-color: rgba(139,92,246,0.2); backdrop-filter: blur(12px); }
+.performance-stat-card .stat-icon-big { font-size: 2rem; margin-bottom: 0.75rem; }
+.performance-stat-card .stat-val { font-size: 2rem; font-weight: 800; color: #09090b; letter-spacing: -0.025em; margin-bottom: 0.25rem; }
+.performance-stat-card .stat-lbl { font-size: 0.8125rem; color: #71717a; font-weight: 500; }
+[data-theme="dark"]     .performance-stat-card .stat-val { color: #fafafa; }
+[data-theme="gradient"] .performance-stat-card .stat-val { color: #f9fafb; }
+
+/* Review cards */
+.performance-section {
+  background: white; border: 1px solid #e4e4e7; border-radius: 20px;
+  overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 1.5rem;
+}
+[data-theme="dark"]     .performance-section { background: #1e1e23; border-color: #27272a; }
+[data-theme="gradient"] .performance-section { background: rgba(15,10,40,0.55); border-color: rgba(139,92,246,0.2); backdrop-filter: blur(12px); }
+
+.performance-section h2 {
+  font-size: 1.0625rem; font-weight: 700; color: #09090b;
+  padding: 1.375rem 1.5rem; border-bottom: 1px solid #f4f4f5; margin: 0;
+  display: flex; align-items: center; justify-content: space-between;
+}
+[data-theme="dark"]     .performance-section h2 { color: #fafafa; border-bottom-color: #27272a; }
+[data-theme="gradient"] .performance-section h2 { color: #f9fafb; border-bottom-color: rgba(139,92,246,0.12); }
+
+.reviews-grid {
+  padding: 1.25rem; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;
+}
+.review-card {
+  background: #fafafa; border: 1px solid #e4e4e7; border-radius: 14px;
+  padding: 1.25rem; transition: all 0.2s ease;
+}
+.review-card:hover { border-color: #c7d2fe; box-shadow: 0 4px 12px rgba(79,70,229,0.08); transform: translateY(-2px); }
+[data-theme="dark"]     .review-card { background: #17171a; border-color: #27272a; }
+[data-theme="gradient"] .review-card { background: rgba(88,28,235,0.07); border-color: rgba(139,92,246,0.15); }
+
+.review-header { display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1rem; }
+.review-avatar {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.875rem;
+}
+.review-info h4 { font-size: 0.9375rem; font-weight: 700; color: #09090b; margin: 0 0 0.125rem; }
+.review-info span { font-size: 0.8125rem; color: #71717a; }
+[data-theme="dark"]     .review-info h4 { color: #fafafa; }
+[data-theme="gradient"] .review-info h4 { color: #f9fafb; }
+
+.rating-bar {
+  margin-bottom: 0.75rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.rating-label { font-size: 0.75rem; font-weight: 600; color: #71717a; width: 80px; flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.03em; }
+.rating-track { flex: 1; height: 6px; background: #e4e4e7; border-radius: 100px; overflow: hidden; }
+.rating-fill  { height: 100%; border-radius: 100px; transition: width 0.5s ease; }
+.rating-fill.excellent { background: linear-gradient(90deg, #16a34a, #059669); }
+.rating-fill.good      { background: linear-gradient(90deg, #2563eb, #0ea5e9); }
+.rating-fill.average   { background: linear-gradient(90deg, #d97706, #f59e0b); }
+.rating-fill.poor      { background: linear-gradient(90deg, #dc2626, #ef4444); }
+.rating-score { font-size: 0.8125rem; font-weight: 700; color: #09090b; width: 28px; text-align: right; flex-shrink: 0; }
+[data-theme="dark"]     .rating-track { background: #27272a; }
+[data-theme="dark"]     .rating-score { color: #fafafa; }
+[data-theme="gradient"] .rating-track { background: rgba(139,92,246,0.15); }
+[data-theme="gradient"] .rating-score { color: #f9fafb; }
+
+.review-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 0.875rem; border-top: 1px solid #f4f4f5; margin-top: 0.875rem;
+}
+[data-theme="dark"]     .review-footer { border-top-color: #27272a; }
+[data-theme="gradient"] .review-footer { border-top-color: rgba(139,92,246,0.12); }
+
+/* Goal cards */
+.goals-list { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.875rem; }
+.goal-card {
+  background: #fafafa; border: 1px solid #e4e4e7; border-radius: 14px;
+  padding: 1.125rem 1.25rem; transition: all 0.2s ease;
+}
+.goal-card:hover { border-color: #c7d2fe; box-shadow: 0 3px 10px rgba(79,70,229,0.07); }
+[data-theme="dark"]     .goal-card { background: #17171a; border-color: #27272a; }
+[data-theme="gradient"] .goal-card { background: rgba(88,28,235,0.07); border-color: rgba(139,92,246,0.15); }
+.goal-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.625rem; }
+.goal-header h4 { font-size: 0.9375rem; font-weight: 700; color: #09090b; margin: 0; }
+.goal-date { font-size: 0.75rem; color: #a1a1aa; font-weight: 500; white-space: nowrap; }
+.goal-progress-bar { height: 7px; background: #e4e4e7; border-radius: 100px; overflow: hidden; margin-bottom: 0.375rem; }
+.goal-progress-fill { height: 100%; background: linear-gradient(90deg, #4f46e5, #7c3aed); border-radius: 100px; transition: width 0.5s ease; }
+.goal-progress-text { font-size: 0.75rem; color: #71717a; font-weight: 500; }
+[data-theme="dark"] .goal-header h4 { color: #fafafa; }
+[data-theme="dark"] .goal-progress-bar { background: #27272a; }
+[data-theme="gradient"] .goal-header h4 { color: #f9fafb; }
+[data-theme="gradient"] .goal-progress-bar { background: rgba(139,92,246,0.15); }
+
+@media (max-width: 768px) {
+  .performance-page { padding: 1.25rem; }
+  .performance-summary { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) { .performance-summary { grid-template-columns: 1fr; } }
